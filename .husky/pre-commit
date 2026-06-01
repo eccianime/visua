@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+npm run lint
+
+# Verifica que todo el código cumpla con el formato de Prettier
+npx prettier --check . --write

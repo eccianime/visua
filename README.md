@@ -33,10 +33,7 @@ import RnNewCommand from './\_rn-new-command.mdx';
 module.exports = function (api) {
   api.cache(true);
   return {
-    presets: [
-      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
-      "nativewind/babel",
-    ],
+    presets: [['babel-preset-expo', { jsxImportSource: 'nativewind' }], 'nativewind/babel'],
   };
 };
 ```
@@ -46,12 +43,12 @@ module.exports = function (api) {
 Create a `metro.config.js` file in the root of your project if you don't already have one, then add the following configuration:
 
 ```js title="metro.config.js"
-const { getDefaultConfig } = require("expo/metro-config");
-const { withNativeWind } = require("nativewind/metro");
+const { getDefaultConfig } = require('expo/metro-config');
+const { withNativeWind } = require('nativewind/metro');
 
 const config = getDefaultConfig(__dirname);
 
-module.exports = withNativeWind(config, { input: "./global.css" });
+module.exports = withNativeWind(config, { input: './global.css' });
 ```
 
 <include>./\_import-css.mdx</include>

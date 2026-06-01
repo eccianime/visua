@@ -1,56 +1,79 @@
-# Welcome to your Expo app 👋
+# Installation (/docs/getting-started/installation)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+import Install from './\_install.mdx';
+import RnNewCommand from './\_rn-new-command.mdx';
 
-## Get started
+{/_ # Installation _/}
 
-1. Install dependencies
+> Nativewind works with both Expo and framework-less React Native projects but Expo provides a more streamlined experience.
+>
+> **Web**: If you'd like to use Metro to bundle for a website or App Clip and you are **not** using Expo, you will need either Expo's Metro config `@expo/metro-config` or to manually use Tailwind CLI to generate a CSS file.
 
-   ```bash
-   npm install
-   ```
+<a href="./installation/" className="underline underline-offset-8 text-fd-primary hover:opacity-100 p-4">Expo</a>
+| <a href="./installation/frameworkless" className="decoration-transparent hover:decoration-fd-foreground opacity-70 hover:opacity-100 underline-offset-8 rounded-lg p-4">Framework-less</a>
+| <a href="./installation/nextjs" className="decoration-transparent hover:decoration-fd-foreground opacity-70 hover:opacity-100 underline-offset-8 rounded-lg p-4">Next.js</a>
 
-2. Start the app
+<Callout type="tip">
+ If you'd like to skip manual setup and use Nativewind with Expo, you can use the following command to initialize a new Expo project with Nativewind and Tailwind CSS.
 
-   ```bash
-   npx expo start
-   ```
+<RnNewCommand />
+</Callout>
 
-In the output, you'll find options to open the app in a
+## Installation with Expo
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 1. Install Nativewind
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+<Install framework="expo" />
 
-## Get a fresh project
+<include>./\_tailwind.mdx</include>
 
-When you're ready, run:
+### 3. Add the Babel preset
 
-```bash
-npm run reset-project
+```js title="babel.config.js"
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    presets: [
+      ["babel-preset-expo", { jsxImportSource: "nativewind" }],
+      "nativewind/babel",
+    ],
+  };
+};
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 4. Create or modify your metro.config.js
 
-### Other setup steps
+Create a `metro.config.js` file in the root of your project if you don't already have one, then add the following configuration:
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```js title="metro.config.js"
+const { getDefaultConfig } = require("expo/metro-config");
+const { withNativeWind } = require("nativewind/metro");
 
-## Learn more
+const config = getDefaultConfig(__dirname);
 
-To learn more about developing your project with Expo, look at the following resources:
+module.exports = withNativeWind(config, { input: "./global.css" });
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+<include>./\_import-css.mdx</include>
 
-## Join the community
+### 6. Modify your `app.json`
 
-Join our community of developers creating universal apps.
+Switch the bundler to use the [Metro bundler](https://docs.expo.dev/guides/customizing-metro/#web-support)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```js
+{
+  "expo": {
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
+```
+
+### 7. TypeScript setup (optional)
+
+<include>./\_typescript.mdx</include>
+
+<include>./\_try-it-out.mdx</include>
+
+<include>./\_additional-guides.mdx</include>

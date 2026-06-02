@@ -2,5 +2,6 @@
 
 npm run lint
 
-# Verifica que todo el código cumpla con el formato de Prettier
-npx prettier --check . --write
+npx prettier --write .
+
+git add .

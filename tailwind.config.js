@@ -14,4 +14,5 @@ module.exports = {
   },
   plugins: [],
   presets: [require('nativewind/preset')],
+  darkMode: 'class',
 };

@@ -4,6 +4,7 @@ import {
   Button,
   ColorStyleSelector,
   GenerateHeader,
+  ImagePickerModal,
   ImageSelector,
   SelectType,
   TabScreenWrapper,
@@ -13,6 +14,7 @@ import { View } from 'react-native';
 
 export default function Generate() {
   const { t } = useTranslation();
+
   return (
     <TabScreenWrapper>
       <GenerateHeader />
@@ -24,6 +26,7 @@ export default function Generate() {
       </View>
       <ColorStyleSelector />
       <Button title={t('generate.generate')} />
+      <ImagePickerModal />
     </TabScreenWrapper>
   );
 }

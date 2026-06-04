@@ -4,26 +4,26 @@
     "slug": "visua",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./src/assets/images/icon.png",
     "scheme": "visua",
     "userInterfaceStyle": "automatic",
     "ios": {
-      "icon": "./assets/expo.icon",
+      "icon": "./src/assets/expo.icon",
       "bundleIdentifier": "com.ingjeanpaulrojas.visua"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
-        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+        "foregroundImage": "./src/assets/images/android-icon-foreground.png",
+        "backgroundImage": "./src/assets/images/android-icon-background.png",
+        "monochromeImage": "./src/assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
       "package": "com.ingjeanpaulrojas.visua"
     },
     "web": {
       "bundler": "metro",
-      "favicon": "./assets/images/favicon.png",
+      "favicon": "./src/assets/images/favicon.png",
       "output": "static"
     },
     "plugins": [
@@ -33,14 +33,28 @@
         {
           "backgroundColor": "#208AEF",
           "android": {
-            "image": "./assets/images/splash-icon.png",
+            "image": "./src/assets/images/splash-icon.png",
             "imageWidth": 76
           }
         }
       ],
       "expo-font",
       "expo-web-browser",
-      "expo-localization"
+      "expo-localization",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "This app needs access to your camera and gallery to obtain your input image for processing.",
+          "colors": {
+            "cropToolbarColor": "#000000"
+          },
+          "dark": {
+            "colors": {
+              "cropToolbarColor": "#000000"
+            }
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

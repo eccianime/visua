@@ -1,8 +1,11 @@
+import account from './account';
+import explore from './explore';
 import generate from './generate';
+import works from './works';
 
 export default {
   generate,
-  title: 'Hello World',
-  description: 'This is a sample translation file for English (United States).',
-  changeLanguage: 'Change Language',
+  explore,
+  works,
+  account,
 } as const;

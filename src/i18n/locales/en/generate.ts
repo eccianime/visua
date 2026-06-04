@@ -1,4 +1,5 @@
 export default {
+  title: 'Generate',
   interior: 'Interior',
   exterior: 'Exterior',
   generate: 'Generate',
@@ -11,4 +12,7 @@ export default {
   selectType: 'Select type',
   colorPalette: 'Color Palette',
   selectColorPalette: 'Select color palette',
+  selectImage: 'Select image source',
+  takeFromCamera: 'Take from camera',
+  chooseFromGallery: 'Choose from gallery',
 };

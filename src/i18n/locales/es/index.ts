@@ -1,8 +1,11 @@
+import account from './account';
+import explore from './explore';
 import generate from './generate';
+import works from './works';
 
 export default {
   generate,
-  title: 'Hola Mundo',
-  description: 'Esta es un archivo de traducción de ejemplo para Español (España).',
-  changeLanguage: 'Cambiar Idioma',
+  explore,
+  works,
+  account,
 } as const;

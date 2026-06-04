@@ -1,0 +1,9 @@
+export { default as CoinImage } from './coin.png';
+export { default as House1Image } from './house-1.jpg';
+export { default as House2Image } from './house-2.jpg';
+export { default as House3Image } from './house-3.jpg';
+export { default as House4Image } from './house-4.jpg';
+export { default as House5Image } from './house-5.jpg';
+export { default as House6Image } from './house-6.jpg';
+export { default as House7Image } from './house-7.jpg';
+export { default as House8Image } from './house-8.jpg';

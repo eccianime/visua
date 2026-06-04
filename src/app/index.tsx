@@ -1,12 +1,18 @@
 import ThemeSelector from '@/components/theme-selector';
 import i18n from '@/i18n';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { router } from 'expo-router';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Index() {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    router.replace('/(tabs)/generate');
+  }, []);
   return (
     <SafeAreaView className="flex-1 items-center justify-center bg-white dark:bg-slate-900">
       <Text className="text-center font-montserrat-bold text-2xl text-red-500">{t('title')}</Text>

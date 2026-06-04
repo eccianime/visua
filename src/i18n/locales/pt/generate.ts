@@ -1,0 +1,14 @@
+export default {
+  interior: 'Interior',
+  exterior: 'Exterior',
+  generate: 'Gerar',
+  transformSpace: 'Transforme seu espaço com IA',
+  aiMagic: 'Deixe a IA reimaginar seu ambiente instantaneamente',
+  addPhoto: 'Adicionar Foto',
+  roomStyle: 'Estilo do Cômodo',
+  selectStyle: 'Selecionar estilo',
+  roomType: 'Tipo de Cômodo',
+  selectType: 'Selecionar tipo',
+  colorPalette: 'Paleta de Cores',
+  selectColorPalette: 'Selecionar paleta de cores',
+};

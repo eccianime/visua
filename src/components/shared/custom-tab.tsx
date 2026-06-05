@@ -1,4 +1,5 @@
 import colors from '@/config/colors';
+import { useTheme } from '@/hooks';
 import { Href, router, usePathname } from 'expo-router';
 import { useColorScheme } from 'nativewind';
 import {
@@ -39,7 +40,7 @@ export function CustomTab() {
   ];
 
   const { colorScheme } = useColorScheme();
-  const isDark = colorScheme === 'dark';
+  const { isDark } = useTheme();
 
   return (
     <View className="absolute bottom-0 w-full p-4">
@@ -54,7 +55,7 @@ export function CustomTab() {
             >
               <button.icon
                 size={20}
-                color={isActive ? colors.gold : isDark ? 'white' : 'black'}
+                color={isActive ? colors.gold : isDark ? colors.white : colors.black}
                 weight={isActive ? 'bold' : 'thin'}
               />
               <Text

@@ -1,6 +1,6 @@
 import { useGenerateStore } from '@/store/generateStore';
 import { useTranslation } from 'react-i18next';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 
 export function SelectType() {
   const { type, setType } = useGenerateStore();
@@ -9,8 +9,8 @@ export function SelectType() {
   const isLeftSelected = type === 'interior';
   const isRightSelected = type === 'exterior';
   return (
-    <View className="mb-6 flex-row rounded-xl bg-slate-300 p-1 dark:bg-slate-600">
-      <TouchableOpacity
+    <View className="mb-4 flex-row rounded-xl bg-slate-300 p-1 dark:bg-slate-600">
+      <Pressable
         onPress={() => setType('interior')}
         className={`h-10 w-1/2 items-center justify-center rounded-lg ${isLeftSelected ? 'bg-gold' : ''}`}
       >
@@ -19,8 +19,8 @@ export function SelectType() {
         >
           {t('generate.interior')}
         </Text>
-      </TouchableOpacity>
-      <TouchableOpacity
+      </Pressable>
+      <Pressable
         onPress={() => setType('exterior')}
         className={`h-10 w-1/2 items-center justify-center rounded-lg ${isRightSelected ? 'bg-gold' : ''}`}
       >
@@ -29,7 +29,7 @@ export function SelectType() {
         >
           {t('generate.exterior')}
         </Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
   );
 }

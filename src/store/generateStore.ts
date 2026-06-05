@@ -4,13 +4,16 @@ interface GenerateState {
   type: 'interior' | 'exterior';
   image: string;
   roomType: string;
-  roomStyle: string;
+  roomStyle: {
+    name: string;
+    description: string;
+  };
   colorPalette: string;
 
   setType: (type: 'interior' | 'exterior') => void;
   setImage: (image: string) => void;
   setRoomType: (roomType: string) => void;
-  setRoomStyle: (roomStyle: string) => void;
+  setRoomStyle: (roomStyle: { name: string; description: string }) => void;
   setColorPalette: (colorPalette: string) => void;
 }
 
@@ -18,7 +21,10 @@ export const useGenerateStore = create<GenerateState>((set) => ({
   type: 'interior',
   image: '',
   roomType: '',
-  roomStyle: '',
+  roomStyle: {
+    name: '',
+    description: '',
+  },
   colorPalette: '',
 
   setType: (type) => set({ type }),

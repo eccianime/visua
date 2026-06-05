@@ -1,5 +1,5 @@
 import colors from '@/config/colors';
-import { useImagePicker } from '@/hooks/useImagePicker';
+import { useImagePicker, useTheme } from '@/hooks';
 import { useModalStore } from '@/store/modalStore';
 import { CameraIcon, ImageIcon, XIcon } from 'phosphor-react-native';
 import { useEffect } from 'react';
@@ -44,6 +44,7 @@ export function ImagePickerModal() {
 
   const { t } = useTranslation();
   const { assets, pickFromCamera, pickFromLibrary } = useImagePicker();
+  const { isDark } = useTheme();
 
   useEffect(() => {
     if (assets.length === 0) return;
@@ -54,32 +55,32 @@ export function ImagePickerModal() {
     <Modal visible={pickerModalVisible} transparent animationType="fade">
       <Animated.View className="absolute inset-0 bg-black/50" style={animatedBackGround}>
         <Animated.View className={'absolute inset-0 justify-end'} style={animatedForeground}>
-          <View className="bg-background p-6 dark:bg-dark-background">
+          <View className="rounded-t-lg bg-background p-6 dark:bg-dark-background">
             <View className="flex-row items-center justify-between">
-              <Text className="font-montserrat-bold text-lg text-title dark:text-dark-title">
+              <Text className="font-montserrat-bold text-lg text-black dark:text-white ">
                 {t('generate.selectImage')}
               </Text>
               <Pressable onPress={() => setPickerModalVisible(false)}>
-                <XIcon size={24} color={colors.black} />
+                <XIcon size={24} color={isDark ? colors.white : colors.black} />
               </Pressable>
             </View>
             <View className="my-4 h-px w-full bg-gray-400" />
             <View className="gap-3">
               <Pressable
-                className="flex-row items-center gap-4 rounded-lg bg-gray-300 px-6 py-4"
+                className="flex-row items-center gap-4 rounded-lg bg-gray-300 px-6 py-4 dark:bg-slate-600"
                 onPress={pickFromCamera}
               >
-                <CameraIcon size={24} color={colors.black} />
-                <Text className="font-montserrat-medium text-base text-title">
+                <CameraIcon size={24} color={isDark ? colors.white : colors.black} />
+                <Text className="font-montserrat-medium text-base text-black dark:text-white">
                   {t('generate.takeFromCamera')}
                 </Text>
               </Pressable>
               <Pressable
-                className="flex-row items-center gap-4 rounded-lg bg-gray-300 px-6 py-4"
+                className="flex-row items-center gap-4 rounded-lg bg-gray-300 px-6 py-4 dark:bg-slate-600"
                 onPress={pickFromLibrary}
               >
-                <ImageIcon size={24} color={colors.black} />
-                <Text className="font-montserrat-medium text-base text-title">
+                <ImageIcon size={24} color={isDark ? colors.white : colors.black} />
+                <Text className="font-montserrat-medium text-base text-black dark:text-white">
                   {t('generate.chooseFromGallery')}
                 </Text>
               </Pressable>

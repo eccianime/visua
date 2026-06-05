@@ -7,6 +7,7 @@ import {
   House7Image,
   House8Image,
 } from '@/assets/app-assets';
+import colors from '@/config/colors';
 import { useGenerateStore } from '@/store/generateStore';
 import { useModalStore } from '@/store/modalStore';
 import { PlusIcon, XIcon } from 'phosphor-react-native';
@@ -26,13 +27,13 @@ export function ImageSelector() {
   return (
     <View className="mb-4 grow justify-center overflow-hidden  rounded-xl bg-gray-100 dark:bg-slate-700">
       {image ? (
-        <View className="h-[300px]">
+        <View className="max-h-[280px]">
           <Image source={{ uri: image }} className="size-full" resizeMode="cover" />
           <Pressable
-            className="absolute bottom-4 right-4 items-center justify-center rounded-full bg-gold p-2"
+            className="absolute bottom-4 right-4 items-center justify-center rounded-full border-2 border-white bg-gold p-2"
             onPress={handleClear}
           >
-            <XIcon size={20} color={'white'} />
+            <XIcon size={20} color={colors.white} />
           </Pressable>
         </View>
       ) : (
@@ -46,10 +47,10 @@ export function ImageSelector() {
             <ImageBall source={House6Image} className="bottom-[5%] left-[22%] size-[40px]" />
             <ImageBall source={House8Image} className="bottom-[5%] right-[22%] size-[40px]" />
           </View>
-          <Text className="mb-2 text-center font-montserrat-bold text-xl text-gray-800 dark:text-dark-title">
+          <Text className="mb-2 text-center font-montserrat-bold text-xl text-gray-800 dark:text-white">
             {t('generate.transformSpace')}
           </Text>
-          <Text className="mb-4 text-center font-montserrat-regular text-base text-gray-600 dark:text-dark-title">
+          <Text className="mb-4 text-center font-montserrat-regular text-base text-gray-600 dark:text-white">
             {t('generate.aiMagic')}
           </Text>
           <Button
@@ -57,7 +58,7 @@ export function ImageSelector() {
             title={t('generate.addPhoto')}
             className="px-5 py-2"
             textClassName="!text-base"
-            icon={<PlusIcon size={20} color={'white'} />}
+            icon={<PlusIcon size={20} color={colors.white} />}
           />
         </View>
       )}

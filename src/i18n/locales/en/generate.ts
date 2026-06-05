@@ -12,7 +12,11 @@ export default {
   selectType: 'Select type',
   colorPalette: 'Color Palette',
   selectColorPalette: 'Select color palette',
+  tapToChange: 'Tap to change',
   selectImage: 'Select image source',
   takeFromCamera: 'Take from camera',
   chooseFromGallery: 'Choose from gallery',
+  continue: 'Continue',
+  confirmStyle: 'Are you sure this is the style you want? You can change it later',
+  confirm: 'Confirm',
 };

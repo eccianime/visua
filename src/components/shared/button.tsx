@@ -1,12 +1,13 @@
 import { ReactNode } from 'react';
-import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { Pressable, PressableProps, Text } from 'react-native';
 
-interface ButtonProps extends TouchableOpacityProps {
+interface ButtonProps extends PressableProps {
   title: string;
   className?: string;
   textClassName?: string;
   icon?: ReactNode;
   iconPosition?: 'left' | 'right';
+  disabled?: boolean;
 }
 
 export function Button({
@@ -15,11 +16,13 @@ export function Button({
   textClassName,
   icon,
   iconPosition = 'left',
+  disabled,
   ...props
 }: Readonly<ButtonProps>) {
   return (
-    <TouchableOpacity
-      className={`flex-row items-center justify-center gap-1 rounded-full bg-gold py-3 ${className}`}
+    <Pressable
+      className={`flex-row items-center justify-center gap-1 rounded-lg bg-gold py-3 ${className} ${disabled ? 'opacity-50' : ''}`}
+      disabled={disabled}
       {...props}
     >
       {icon && iconPosition === 'left' && icon}
@@ -27,6 +30,6 @@ export function Button({
         {title}
       </Text>
       {icon && iconPosition === 'right' && icon}
-    </TouchableOpacity>
+    </Pressable>
   );
 }

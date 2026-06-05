@@ -11,7 +11,9 @@ export default {
   selectType: 'Seleccionar tipo',
   colorPalette: 'Paleta de Colores',
   selectColorPalette: 'Seleccionar paleta de colores',
+  tapToChange: 'Toque para cambiar',
   selectImage: 'Seleccionar fuente de imagen',
   takeFromCamera: 'Tomar de la cámara',
   chooseFromGallery: 'Elegir de la galería',
+  continue: 'Continuar',
 };

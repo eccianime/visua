@@ -1,5 +1,5 @@
 import { useColorScheme } from 'nativewind';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 
 export default function ThemeSelector() {
   const { colorScheme, setColorScheme } = useColorScheme();
@@ -22,7 +22,7 @@ export default function ThemeSelector() {
           const isActive = colorScheme === theme.id;
 
           return (
-            <TouchableOpacity
+            <Pressable
               key={theme.id}
               onPress={() => setColorScheme(theme.id as 'light' | 'dark' | 'system')}
               className={`flex-1 items-center justify-center rounded-xl px-2 py-3 ${
@@ -36,7 +36,7 @@ export default function ThemeSelector() {
               >
                 {theme.label}
               </Text>
-            </TouchableOpacity>
+            </Pressable>
           );
         })}
       </View>

@@ -48,14 +48,14 @@ export function ImageSelector() {
             <ImageBall source={House8Image} className="bottom-[5%] right-[22%] size-[40px]" />
           </View>
           <Text className="mb-2 text-center font-montserrat-bold text-xl text-gray-800 dark:text-white">
-            {t('generate.transformSpace')}
+            {t('generate.imageSelector.transformSpace')}
           </Text>
           <Text className="mb-4 text-center font-montserrat-regular text-base text-gray-600 dark:text-white">
-            {t('generate.aiMagic')}
+            {t('generate.imageSelector.aiMagic')}
           </Text>
           <Button
             onPress={() => setPickerModalVisible(true)}
-            title={t('generate.addPhoto')}
+            title={t('generate.imageSelector.addPhoto')}
             className="px-5 py-2"
             textClassName="!text-base"
             icon={<PlusIcon size={20} color={colors.white} />}

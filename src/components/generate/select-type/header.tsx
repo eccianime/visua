@@ -24,7 +24,7 @@ export function SelectTypeHeader() {
         <XIcon size={20} color={isDark ? colors.white : colors.black} />
       </Pressable>
       <Text className="font-montserrat-semibold text-2xl text-black dark:text-white">
-        {t('generate.selectType')}
+        {t('generate.roomTypeSelector.selectType')}
       </Text>
     </View>
   );

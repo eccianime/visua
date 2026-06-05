@@ -17,7 +17,7 @@ export function SelectType() {
         <Text
           className={`text-lg  ${isLeftSelected ? 'font-montserrat-bold text-white' : 'font-montserrat-regular dark:text-white'}`}
         >
-          {t('generate.interior')}
+          {t('generate.selectType.interior')}
         </Text>
       </Pressable>
       <Pressable
@@ -27,7 +27,7 @@ export function SelectType() {
         <Text
           className={`text-lg ${isRightSelected ? 'font-montserrat-bold text-white ' : 'font-montserrat-regular dark:text-white'}`}
         >
-          {t('generate.exterior')}
+          {t('generate.selectType.exterior')}
         </Text>
       </Pressable>
     </View>

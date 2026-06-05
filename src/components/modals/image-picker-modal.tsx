@@ -58,7 +58,7 @@ export function ImagePickerModal() {
           <View className="rounded-t-lg bg-background p-6 dark:bg-dark-background">
             <View className="flex-row items-center justify-between">
               <Text className="font-montserrat-bold text-lg text-black dark:text-white ">
-                {t('generate.selectImage')}
+                {t('generate.modal.imagePicker.selectImage')}
               </Text>
               <Pressable onPress={() => setPickerModalVisible(false)}>
                 <XIcon size={24} color={isDark ? colors.white : colors.black} />
@@ -72,7 +72,7 @@ export function ImagePickerModal() {
               >
                 <CameraIcon size={24} color={isDark ? colors.white : colors.black} />
                 <Text className="font-montserrat-medium text-base text-black dark:text-white">
-                  {t('generate.takeFromCamera')}
+                  {t('generate.modal.imagePicker.takeFromCamera')}
                 </Text>
               </Pressable>
               <Pressable
@@ -81,7 +81,7 @@ export function ImagePickerModal() {
               >
                 <ImageIcon size={24} color={isDark ? colors.white : colors.black} />
                 <Text className="font-montserrat-medium text-base text-black dark:text-white">
-                  {t('generate.chooseFromGallery')}
+                  {t('generate.modal.imagePicker.chooseFromGallery')}
                 </Text>
               </Pressable>
             </View>

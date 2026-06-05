@@ -38,10 +38,12 @@ export function RoomTypeSelector() {
         </View>
         <View className="h-[60px] justify-center">
           <Text className="text-center  font-montserrat-semibold text-base text-black dark:text-white">
-            {roomType || t('generate.roomType')}
+            {roomType || t('generate.roomTypeSelector.roomType')}
           </Text>
           <Text className="text-center font-montserrat-regular text-sm text-gray-500 dark:text-gray-400">
-            {roomType ? t('generate.tapToChange') : t('generate.selectType')}
+            {roomType
+              ? t('generate.roomTypeSelector.tapToChange')
+              : t('generate.roomTypeSelector.selectType')}
           </Text>
         </View>
       </Pressable>

@@ -40,10 +40,12 @@ export function RoomStyleSelector() {
         </View>
         <View className="h-[60px] justify-center">
           <Text className="text-center  font-montserrat-semibold text-base text-black dark:text-white">
-            {roomStyle.name || t('generate.roomStyle')}
+            {roomStyle.name || t('generate.roomStyleSelector.roomStyle')}
           </Text>
           <Text className="text-center font-montserrat-regular text-sm text-gray-500 dark:text-gray-400">
-            {roomStyle.name ? t('generate.tapToChange') : t('generate.selectStyle')}
+            {roomStyle.name
+              ? t('generate.roomStyleSelector.tapToChange')
+              : t('generate.roomStyleSelector.selectStyle')}
           </Text>
         </View>
       </Pressable>

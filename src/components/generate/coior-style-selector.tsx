@@ -14,10 +14,10 @@ export function ColorStyleSelector() {
       </View>
       <View>
         <Text className="  font-montserrat-semibold text-base text-black dark:text-white">
-          {t('generate.colorPalette')}
+          {t('generate.colorSelector.colorPalette')}
         </Text>
         <Text className=" font-montserrat-regular text-sm text-gray-500 dark:text-gray-400">
-          {t('generate.selectColorPalette')}
+          {t('generate.colorSelector.selectColorPalette')}
         </Text>
       </View>
     </View>

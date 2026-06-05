@@ -72,7 +72,7 @@ export function RoomStyleModal({
             <View className="flex-row items-center justify-between">
               <View className="flex-1">
                 <Text className="font-montserrat-bold text-lg text-black dark:text-white ">
-                  {t('generate.confirmStyle')}
+                  {t('generate.modal.roomStyle.confirmStyle')}
                 </Text>
               </View>
               <Pressable
@@ -111,7 +111,7 @@ export function RoomStyleModal({
               <Button
                 className="!py-2"
                 textClassName="!text-base"
-                title={t('generate.confirm')}
+                title={t('generate.modal.roomStyle.confirm')}
                 onPress={() => onConfirm(modalData)}
               />
             </View>

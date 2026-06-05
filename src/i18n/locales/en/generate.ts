@@ -1,22 +1,38 @@
 export default {
   title: 'Generate',
-  interior: 'Interior',
-  exterior: 'Exterior',
+  selectType: {
+    interior: 'Interior',
+    exterior: 'Exterior',
+  },
+  imageSelector: {
+    transformSpace: 'Transform your space with AI',
+    aiMagic: 'Let AI reimagine your environment instantly',
+    addPhoto: 'Add Photo',
+  },
+  roomTypeSelector: {
+    roomType: 'Room Type',
+    selectType: 'Select type',
+    tapToChange: 'Tap to change',
+  },
+  roomStyleSelector: {
+    roomStyle: 'Room Style',
+    selectStyle: 'Select style',
+    tapToChange: 'Tap to change',
+  },
+  modal: {
+    imagePicker: {
+      selectImage: 'Select image source',
+      takeFromCamera: 'Take from camera',
+      chooseFromGallery: 'Choose from gallery',
+    },
+    roomStyle: {
+      confirmStyle: 'Are you sure this is the style you want? You can change it later',
+      confirm: 'Confirm',
+    },
+  },
+  colorSelector: {
+    colorPalette: 'Color Palette',
+    selectColorPalette: 'Select color palette',
+  },
   generate: 'Generate',
-  transformSpace: 'Transform your space with AI',
-  aiMagic: 'Let AI reimagine your environment instantly',
-  addPhoto: 'Add Photo',
-  roomStyle: 'Room Style',
-  selectStyle: 'Select style',
-  roomType: 'Room Type',
-  selectType: 'Select type',
-  colorPalette: 'Color Palette',
-  selectColorPalette: 'Select color palette',
-  tapToChange: 'Tap to change',
-  selectImage: 'Select image source',
-  takeFromCamera: 'Take from camera',
-  chooseFromGallery: 'Choose from gallery',
-  continue: 'Continue',
-  confirmStyle: 'Are you sure this is the style you want? You can change it later',
-  confirm: 'Confirm',
 };

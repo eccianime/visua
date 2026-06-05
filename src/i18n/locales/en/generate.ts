@@ -30,9 +30,11 @@ export default {
       confirm: 'Confirm',
     },
   },
-  colorSelector: {
+  paletteSelector: {
     colorPalette: 'Color Palette',
     selectColorPalette: 'Select color palette',
+    selectPalette: 'Select palette',
+    tapToChange: 'Tap to change',
   },
   generate: 'Generate',
 };

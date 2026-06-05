@@ -31,9 +31,11 @@ export default {
       confirm: 'Confirmar',
     },
   },
-  colorSelector: {
+  paletteSelector: {
     colorPalette: 'Paleta de Cores',
     selectColorPalette: 'Selecionar paleta de cores',
+    selectPalette: 'Selecionar paleta',
+    tapToChange: 'Toque para alterar',
   },
   generate: 'Gerar',
 };

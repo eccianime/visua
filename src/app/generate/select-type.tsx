@@ -5,8 +5,8 @@ export default function SelectType() {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      className="flex-1"
-      contentContainerClassName="pt-safe bg-white dark:bg-dark-background p-6 flex-grow"
+      className="flex-1 bg-white dark:bg-dark-background"
+      contentContainerClassName="pt-safe  p-6 flex-grow"
     >
       <SelectTypeHeader />
       <RoomList />

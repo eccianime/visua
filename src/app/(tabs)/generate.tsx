@@ -1,5 +1,5 @@
 import {
-  ColorStyleSelector,
+  ColorPaletteSelector,
   GenerateButton,
   GenerateHeader,
   ImagePickerModal,
@@ -21,7 +21,7 @@ export default function Generate() {
         <RoomTypeSelector />
         <RoomStyleSelector />
       </View>
-      <ColorStyleSelector />
+      <ColorPaletteSelector />
       <GenerateButton />
       <ImagePickerModal />
     </TabScreenWrapper>

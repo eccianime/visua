@@ -8,13 +8,16 @@ interface GenerateState {
     name: string;
     description: string;
   };
-  colorPalette: string;
+  colorPalette: {
+    name: string;
+    palette: string[];
+  };
 
   setType: (type: 'interior' | 'exterior') => void;
   setImage: (image: string) => void;
   setRoomType: (roomType: string) => void;
   setRoomStyle: (roomStyle: { name: string; description: string }) => void;
-  setColorPalette: (colorPalette: string) => void;
+  setColorPalette: (colorPalette: { name: string; palette: string[] }) => void;
 }
 
 export const useGenerateStore = create<GenerateState>((set) => ({
@@ -25,7 +28,10 @@ export const useGenerateStore = create<GenerateState>((set) => ({
     name: '',
     description: '',
   },
-  colorPalette: '',
+  colorPalette: {
+    name: '',
+    palette: [],
+  },
 
   setType: (type) => set({ type }),
   setImage: (image) => set({ image }),

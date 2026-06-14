@@ -1,7 +1,6 @@
 import colors from '@/config/colors';
 import { useTheme } from '@/hooks';
 import { Href, router, usePathname } from 'expo-router';
-import { useColorScheme } from 'nativewind';
 import {
   CheckSquareOffsetIcon,
   GlobeHemisphereWestIcon,
@@ -39,7 +38,6 @@ export function CustomTab() {
     },
   ];
 
-  const { colorScheme } = useColorScheme();
   const { isDark } = useTheme();
 
   return (

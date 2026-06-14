@@ -49,6 +49,7 @@ export function RoomStyleModal({
       backgroundOpacity.value = withDelay(300, withTiming(0, { duration: 300 }));
       backgroundPosition.value = SCREEN_HEIGHT;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [modalData]);
 
   const animatedBackGround = useAnimatedStyle(() => ({

@@ -32,6 +32,7 @@ export function ImagePickerModal() {
       backgroundOpacity.value = withDelay(300, withTiming(0, { duration: 300 }));
       backgroundPosition.value = SCREEN_HEIGHT;
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pickerModalVisible]);
 
   const animatedBackGround = useAnimatedStyle(() => ({
@@ -49,6 +50,7 @@ export function ImagePickerModal() {
   useEffect(() => {
     if (assets.length === 0) return;
     onSelect(assets[0].uri);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [assets]);
 
   return (

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ModalData, RoomStyleModal } from '@/components/modals/room-style-modal';
 import ROOM_STYLES, { RoomStyle } from '@/data/room-styles';
 import ROOM_TYPES from '@/data/room-type';

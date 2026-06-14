@@ -54,6 +54,7 @@ export function RoomList() {
     setRoomType(item);
     setSelectedTop(null);
     router.back();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderItem = useCallback(

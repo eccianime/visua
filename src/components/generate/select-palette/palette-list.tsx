@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import COLOR_PALETTES, { ColorPalette } from '@/data/color-palettes';
 import ROOM_TYPES from '@/data/room-type';
 import { useGenerateStore } from '@/store/generateStore';
@@ -18,7 +19,6 @@ export function PaletteList() {
   const handleSelectItem = useCallback((item: ColorPalette) => {
     setColorPalette(item);
     router.back();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const renderItem = useCallback(

@@ -17,11 +17,9 @@ export function RoomStyleSelector() {
     router.push('/generate/select-style');
   }, []);
 
-  const imageUrl = ROOM_STYLES.find(
-    (item) => item.name[i18n.language as keyof typeof item.name] === roomStyle.name
-  )?.imageUrl;
+  const imageUrl = ROOM_STYLES.find((item) => item.id === roomStyle?.id)?.imageUrl;
 
-  const hasRoomStyle = roomStyle.name && imageUrl;
+  const hasRoomStyle = roomStyle?.id && imageUrl;
 
   return (
     <View className="w-1/2 flex-1 pr-1.5">
@@ -40,10 +38,12 @@ export function RoomStyleSelector() {
         </View>
         <View className="h-[60px] justify-center">
           <Text className="text-center  font-montserrat-semibold text-base text-black dark:text-white">
-            {roomStyle.name || t('generate.roomStyleSelector.roomStyle')}
+            {roomStyle?.id
+              ? roomStyle.name[i18n.language as keyof typeof roomStyle.name]
+              : t('generate.roomStyleSelector.roomStyle')}
           </Text>
           <Text className="text-center font-montserrat-regular text-sm text-gray-500 dark:text-gray-400">
-            {roomStyle.name
+            {roomStyle?.id
               ? t('generate.roomStyleSelector.tapToChange')
               : t('generate.roomStyleSelector.selectStyle')}
           </Text>

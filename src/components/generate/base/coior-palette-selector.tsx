@@ -22,23 +22,24 @@ export function ColorPaletteSelector() {
       onPress={handlePress}
     >
       <View className="flex-row items-center gap-3">
-        {!colorPalette.name && (
+        {!colorPalette?.id && (
           <View className="items-center justify-center rounded-full border border-gray-300 p-3 dark:border-slate-500">
             <PaletteIcon size={24} color={isDark ? colors.background : colors.dark.background} />
           </View>
         )}
         <View>
           <Text className="  font-montserrat-semibold text-base text-black dark:text-white">
-            {colorPalette.name || t('generate.paletteSelector.colorPalette')}
+            {colorPalette?.name[i18n.language as keyof typeof colorPalette.name] ||
+              t('generate.paletteSelector.colorPalette')}
           </Text>
           <Text className=" font-montserrat-regular text-sm text-gray-500 dark:text-gray-400">
-            {colorPalette.name
+            {colorPalette?.id
               ? t('generate.paletteSelector.tapToChange')
               : t('generate.paletteSelector.selectColorPalette')}
           </Text>
         </View>
       </View>
-      {colorPalette.palette.length > 0 && (
+      {colorPalette && colorPalette?.palette.length > 0 && (
         <View className="flex-row">
           {colorPalette.palette.map((color, index) => (
             <View

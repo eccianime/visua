@@ -7,13 +7,13 @@ import {
   House7Image,
   House8Image,
 } from '@/assets/app-assets';
+import { Button } from '@/components/shared/button';
 import colors from '@/config/colors';
 import { useGenerateStore } from '@/store/generateStore';
 import { useModalStore } from '@/store/modalStore';
 import { PlusIcon, XIcon } from 'phosphor-react-native';
 import { useTranslation } from 'react-i18next';
 import { Image, ImageSourcePropType, Pressable, Text, View } from 'react-native';
-import { Button } from '../shared/button';
 
 export function ImageSelector() {
   const { image, setImage } = useGenerateStore();

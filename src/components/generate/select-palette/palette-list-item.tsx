@@ -12,7 +12,7 @@ export const PaletteListItem = ({ item, isSelected, onSelectItem, name }: Palett
   return (
     <Pressable
       onPress={() => onSelectItem(item)}
-      className={`w-full gap-3 rounded-xl bg-white p-4 dark:bg-slate-700`}
+      className={`w-full gap-3 rounded-xl bg-white p-4 dark:bg-slate-700 ${isSelected && 'border-2 border-gold'}`}
     >
       <Text
         numberOfLines={1}

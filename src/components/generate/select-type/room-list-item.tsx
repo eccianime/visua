@@ -18,6 +18,7 @@ interface RoomListItemProps {
   hasChildrenSelected: boolean;
   onSelectItem: (item: string) => void;
   selectedItem: string;
+  searchTerm: string;
 }
 
 export const RoomListItem = ({
@@ -27,6 +28,7 @@ export const RoomListItem = ({
   hasChildrenSelected,
   onSelectItem,
   selectedItem,
+  searchTerm,
 }: RoomListItemProps) => {
   const { isDark } = useTheme();
 
@@ -53,6 +55,21 @@ export const RoomListItem = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSelected]);
 
+  const countResults =
+    searchTerm.length === 0
+      ? 0
+      : item.items.filter((item) => {
+          const normalizedSearch = searchTerm
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase();
+          const normalizedItem = item
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase();
+          return normalizedItem.includes(normalizedSearch);
+        }).length;
+
   return (
     <View>
       <Pressable
@@ -72,6 +89,7 @@ export const RoomListItem = ({
             >
               {item.title}
               {hasChildrenSelected && ` - (${selectedItem})`}
+              {!!countResults && ` (${countResults})`}
             </Text>
           </View>
         </View>

@@ -17,6 +17,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 
 export interface ModalData {
   visible: boolean;
+  id: string;
   title: string;
   description: string;
   imageUrl: string;
@@ -79,6 +80,7 @@ export function RoomStyleModal({
                 onPress={() =>
                   setModalData({
                     visible: false,
+                    id: '',
                     title: '',
                     description: '',
                     imageUrl: '',

@@ -1,37 +1,27 @@
+import { ColorPalette } from '@/data/color-palettes';
+import { RoomStyle } from '@/data/room-styles';
 import { create } from 'zustand';
 
 interface GenerateState {
   type: 'interior' | 'exterior';
   image: string;
   roomType: string;
-  roomStyle: {
-    name: string;
-    description: string;
-  };
-  colorPalette: {
-    name: string;
-    palette: string[];
-  };
+  roomStyle: RoomStyle | null;
+  colorPalette: ColorPalette | null;
 
   setType: (type: 'interior' | 'exterior') => void;
   setImage: (image: string) => void;
   setRoomType: (roomType: string) => void;
-  setRoomStyle: (roomStyle: { name: string; description: string }) => void;
-  setColorPalette: (colorPalette: { name: string; palette: string[] }) => void;
+  setRoomStyle: (roomStyle: RoomStyle | null) => void;
+  setColorPalette: (colorPalette: ColorPalette | null) => void;
 }
 
 export const useGenerateStore = create<GenerateState>((set) => ({
   type: 'interior',
   image: '',
   roomType: '',
-  roomStyle: {
-    name: '',
-    description: '',
-  },
-  colorPalette: {
-    name: '',
-    palette: [],
-  },
+  roomStyle: null,
+  colorPalette: null,
 
   setType: (type) => set({ type }),
   setImage: (image) => set({ image }),

@@ -16,18 +16,19 @@ export function StyleList() {
 
   const [modalData, setModalData] = useState<ModalData>({
     visible: false,
+    id: '',
     title: '',
     description: '',
     imageUrl: '',
   });
 
   const handleSelectItem = useCallback((item: ModalData) => {
-    setRoomStyle({
-      name: item.title,
-      description: item.description,
-    });
+    const target = ROOM_STYLES.find((style) => style.id === item.id);
+    if (!target) return;
+    setRoomStyle(target);
     setModalData({
       visible: false,
+      id: '',
       title: '',
       description: '',
       imageUrl: '',
@@ -38,24 +39,28 @@ export function StyleList() {
   const handleShowModal = useCallback((item: RoomStyle) => {
     setModalData({
       visible: true,
+      id: item.id,
       title: item.name[currentLanguage],
       description: item.description[currentLanguage],
       imageUrl: item.imageUrl,
     });
   }, []);
 
-  const renderItem = useCallback(({ item, index }: { item: RoomStyle; index: number }) => {
-    return (
-      <Animated.View entering={FadeInLeft.duration(300).delay(100 * index)} className={'w-1/3'}>
-        <StyleListItem
-          item={item}
-          name={item.name[currentLanguage]}
-          isSelected={roomStyle.name === item.name[currentLanguage]}
-          onSelectItem={handleShowModal}
-        />
-      </Animated.View>
-    );
-  }, []);
+  const renderItem = useCallback(
+    ({ item, index }: { item: RoomStyle; index: number }) => {
+      return (
+        <Animated.View entering={FadeInLeft.duration(300).delay(100 * index)} className={'w-1/3'}>
+          <StyleListItem
+            item={item}
+            name={item.name[currentLanguage]}
+            isSelected={roomStyle?.id === item.id}
+            onSelectItem={handleShowModal}
+          />
+        </Animated.View>
+      );
+    },
+    [roomStyle]
+  );
 
   return (
     <>

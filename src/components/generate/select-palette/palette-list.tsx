@@ -16,25 +16,26 @@ export function PaletteList() {
   const { colorPalette, setColorPalette } = useGenerateStore();
 
   const handleSelectItem = useCallback((item: ColorPalette) => {
-    setColorPalette({
-      name: item.name[currentLanguage],
-      palette: item.palette,
-    });
+    setColorPalette(item);
     router.back();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const renderItem = useCallback(({ item, index }: { item: ColorPalette; index: number }) => {
-    return (
-      <Animated.View entering={FadeInLeft.duration(300).delay(100 * index)}>
-        <PaletteListItem
-          isSelected={colorPalette.name === item.name[currentLanguage]}
-          onSelectItem={handleSelectItem}
-          item={item}
-          name={item.name[currentLanguage]}
-        />
-      </Animated.View>
-    );
-  }, []);
+  const renderItem = useCallback(
+    ({ item, index }: { item: ColorPalette; index: number }) => {
+      return (
+        <Animated.View entering={FadeInLeft.duration(300).delay(100 * index)}>
+          <PaletteListItem
+            isSelected={colorPalette?.id === item.id}
+            onSelectItem={handleSelectItem}
+            item={item}
+            name={item.name[currentLanguage]}
+          />
+        </Animated.View>
+      );
+    },
+    [colorPalette]
+  );
 
   return (
     <FlatList

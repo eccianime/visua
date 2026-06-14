@@ -13,11 +13,15 @@ export default {
     roomType: 'Tipo de Habitación',
     selectType: 'Seleccionar tipo',
     tapToChange: 'Toca para cambiar',
+    enterSearchTerm: 'Introducir término de búsqueda',
+    noResults: 'No se encontraron resultados',
+    cleanSelection: 'Limpiar selección',
   },
   roomStyleSelector: {
     roomStyle: 'Estilo de Habitación',
     selectStyle: 'Seleccionar estilo',
     tapToChange: 'Toca para cambiar',
+    cleanSelection: 'Limpiar selección',
   },
   modal: {
     imagePicker: {
@@ -36,6 +40,18 @@ export default {
     selectColorPalette: 'Seleccionar paleta de colores',
     selectPalette: 'Seleccionar paleta',
     tapToChange: 'Toca para cambiar',
+    cleanSelection: 'Limpiar selección',
   },
   generate: 'Generar',
+  pleaseWait: {
+    generatingDesign: 'Generando diseño... ({{percentage}}%)',
+    pleaseWait: 'Por favor espera. Solo tomará un momento...',
+  },
+  results: {
+    title: 'Resultados',
+    regenerate: 'Regenerar',
+    download: 'Descargar',
+    share: 'Compartir',
+    discard: 'Descartar',
+  },
 };

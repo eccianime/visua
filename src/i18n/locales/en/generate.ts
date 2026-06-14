@@ -13,11 +13,15 @@ export default {
     roomType: 'Room Type',
     selectType: 'Select type',
     tapToChange: 'Tap to change',
+    enterSearchTerm: 'Enter search term',
+    noResults: 'No results',
+    cleanSelection: 'Clean selection',
   },
   roomStyleSelector: {
     roomStyle: 'Room Style',
     selectStyle: 'Select style',
     tapToChange: 'Tap to change',
+    cleanSelection: 'Clean selection',
   },
   modal: {
     imagePicker: {
@@ -35,6 +39,18 @@ export default {
     selectColorPalette: 'Select color palette',
     selectPalette: 'Select palette',
     tapToChange: 'Tap to change',
+    cleanSelection: 'Clean selection',
   },
   generate: 'Generate',
+  pleaseWait: {
+    generatingDesign: 'Generating design... ({{percentage}}%)',
+    pleaseWait: 'Please wait. It will take only a moment...',
+  },
+  results: {
+    title: 'Results',
+    regenerate: 'Regenerate',
+    download: 'Download',
+    share: 'Share',
+    discard: 'Discard',
+  },
 };

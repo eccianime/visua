@@ -13,11 +13,15 @@ export default {
     roomType: 'Tipo de Cômodo',
     selectType: 'Selecionar tipo',
     tapToChange: 'Toque para alterar',
+    enterSearchTerm: 'Introduzir termo de pesquisa',
+    noResults: 'Sem resultados',
+    cleanSelection: 'Limpar seleção',
   },
   roomStyleSelector: {
     roomStyle: 'Estilo do Cômodo',
     selectStyle: 'Selecionar estilo',
     tapToChange: 'Toque para alterar',
+    cleanSelection: 'Limpar seleção',
   },
   modal: {
     imagePicker: {
@@ -36,6 +40,18 @@ export default {
     selectColorPalette: 'Selecionar paleta de cores',
     selectPalette: 'Selecionar paleta',
     tapToChange: 'Toque para alterar',
+    cleanSelection: 'Limpar seleção',
   },
   generate: 'Gerar',
+  pleaseWait: {
+    generatingDesign: 'Gerando design... ({{percentage}}%)',
+    pleaseWait: 'Por favor, aguarde. Levará apenas um momento...',
+  },
+  results: {
+    title: 'Resultados',
+    regenerate: 'Regenerar',
+    download: 'Descarregar',
+    share: 'Partilhar',
+    discard: 'Descartar',
+  },
 };

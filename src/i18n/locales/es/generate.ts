@@ -53,5 +53,7 @@ export default {
     download: 'Descargar',
     share: 'Compartir',
     discard: 'Descartar',
+    before: 'Antes',
+    after: 'Después',
   },
 };

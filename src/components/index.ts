@@ -17,4 +17,6 @@ export * from './generate/select-palette/palette-list';
 export * from './generate/select-style/style-list';
 export * from './generate/select-type/room-list';
 
+export * from './generate/results/before-after-slider';
+
 export * from './modals/image-picker-modal';

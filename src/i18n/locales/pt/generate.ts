@@ -26,7 +26,7 @@ export default {
   modal: {
     imagePicker: {
       selectImage: 'Selecionar origem da imagem',
-      takeFromCamera: 'Tirar da câmera',
+      takeFromCamera: 'Tirar foto',
       chooseFromGallery: 'Escolher da galeria',
     },
     roomStyle: {
@@ -49,9 +49,11 @@ export default {
   },
   results: {
     title: 'Resultados',
-    regenerate: 'Regenerar',
-    download: 'Descarregar',
-    share: 'Partilhar',
+    regenerate: 'Regerar',
+    download: 'Baixar',
+    share: 'Compartilhar',
     discard: 'Descartar',
+    before: 'Antes',
+    after: 'Depois',
   },
 };

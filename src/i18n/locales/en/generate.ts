@@ -52,5 +52,7 @@ export default {
     download: 'Download',
     share: 'Share',
     discard: 'Discard',
+    before: 'Before',
+    after: 'After',
   },
 };

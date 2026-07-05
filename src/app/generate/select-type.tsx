@@ -1,12 +1,12 @@
 import { Button, RoomList, ScreenHeader } from '@/components';
+import { useCurrentLanguage } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
 import { router } from 'expo-router';
 import { useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { ScrollView, View } from 'react-native';
 
 export default function SelectType() {
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
   const { roomType, setRoomType } = useGenerateStore();
 
   const handleClean = useCallback(() => {

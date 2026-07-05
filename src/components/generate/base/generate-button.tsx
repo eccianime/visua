@@ -1,10 +1,10 @@
 import { Button } from '@/components/shared/button';
+import { useCurrentLanguage } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
 import { router } from 'expo-router';
-import { useTranslation } from 'react-i18next';
 
 export function GenerateButton() {
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
   const { image, roomType, roomStyle, colorPalette } = useGenerateStore();
 
   const isDisabled = !image || !roomType || !roomStyle?.id || !colorPalette?.id;

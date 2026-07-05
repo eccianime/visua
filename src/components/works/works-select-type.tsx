@@ -1,10 +1,10 @@
+import { useCurrentLanguage } from '@/hooks';
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Pressable, Text, View } from 'react-native';
 
 export function WorksSelectType() {
   const [type, setType] = useState<'all' | 'interior' | 'exterior'>('all');
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
 
   const isAllSelected = type === 'all';
   const isLeftSelected = type === 'interior';

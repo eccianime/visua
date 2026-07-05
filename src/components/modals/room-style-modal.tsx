@@ -1,8 +1,7 @@
 import colors from '@/config/colors';
-import { useTheme } from '@/hooks';
+import { useCurrentLanguage, useTheme } from '@/hooks';
 import { XIcon } from 'phosphor-react-native';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Dimensions, Image, Modal, Pressable, Text, View } from 'react-native';
 import Animated, {
   useAnimatedStyle,
@@ -60,7 +59,7 @@ export function RoomStyleModal({
     transform: [{ scale: contentScale.value }],
   }));
 
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
   const { isDark } = useTheme();
 
   return (

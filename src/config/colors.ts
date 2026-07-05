@@ -11,6 +11,7 @@ const colors = {
   },
   gold: '#be7a2b',
   success: '#22c55e',
+  error: '#ef4444',
 };
 
 export default colors;

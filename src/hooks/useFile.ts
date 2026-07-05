@@ -80,8 +80,6 @@ export function useFile() {
         isLoading: false,
         error: error as Error,
       });
-
-      throw error;
     } finally {
       setState((prev) => ({
         ...prev,

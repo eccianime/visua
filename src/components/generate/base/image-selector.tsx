@@ -9,15 +9,15 @@ import {
 } from '@/assets/app-assets';
 import { Button } from '@/components/shared/button';
 import colors from '@/config/colors';
+import { useCurrentLanguage } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
 import { useModalStore } from '@/store/modalStore';
 import { PlusIcon, XIcon } from 'phosphor-react-native';
-import { useTranslation } from 'react-i18next';
 import { Image, ImageSourcePropType, Pressable, Text, View } from 'react-native';
 
 export function ImageSelector() {
   const { image, setImage } = useGenerateStore();
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
   const { setPickerModalVisible } = useModalStore();
 
   const handleClear = () => {
@@ -27,7 +27,7 @@ export function ImageSelector() {
   return (
     <View className="mb-4 grow justify-center overflow-hidden  rounded-xl bg-gray-100 dark:bg-slate-700">
       {image ? (
-        <View className="max-h-[280px]">
+        <View className="flex-1">
           <Image source={{ uri: image }} className="size-full" resizeMode="cover" />
           <Pressable
             className="absolute bottom-4 right-4 items-center justify-center rounded-full border-2 border-white bg-gold p-2"

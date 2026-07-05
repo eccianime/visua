@@ -5,10 +5,10 @@ import {
   RoomTypeHorizontalScroll,
   TabScreenWrapper,
 } from '@/components';
-import { useTranslation } from 'react-i18next';
+import { useCurrentLanguage } from '@/hooks';
 
 export default function Explore() {
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
 
   return (
     <TabScreenWrapper isClear>

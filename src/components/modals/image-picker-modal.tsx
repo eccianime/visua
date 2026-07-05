@@ -1,9 +1,8 @@
 import colors from '@/config/colors';
-import { useImagePicker, useTheme } from '@/hooks';
+import { useCurrentLanguage, useImagePicker, useTheme } from '@/hooks';
 import { useModalStore } from '@/store/modalStore';
 import { CameraIcon, ImageIcon, XIcon } from 'phosphor-react-native';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Dimensions, Modal, Pressable, Text, View } from 'react-native';
 import Animated, {
   useAnimatedStyle,
@@ -43,7 +42,7 @@ export function ImagePickerModal() {
     transform: [{ translateY: contentPosition.value }],
   }));
 
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
   const { assets, pickFromCamera, pickFromLibrary } = useImagePicker();
   const { isDark } = useTheme();
 

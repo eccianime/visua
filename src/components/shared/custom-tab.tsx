@@ -1,5 +1,5 @@
 import colors from '@/config/colors';
-import { useTheme } from '@/hooks';
+import { useCurrentLanguage, useTheme } from '@/hooks';
 import { Href, router, usePathname } from 'expo-router';
 import {
   CheckSquareOffsetIcon,
@@ -8,11 +8,10 @@ import {
   MagicWandIcon,
   UserCircleIcon,
 } from 'phosphor-react-native';
-import { useTranslation } from 'react-i18next';
 import { Pressable, Text, View } from 'react-native';
 
 export function CustomTab() {
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
   const pathName = usePathname();
 
   const buttons: { text: string; icon: Icon; route: Href }[] = [

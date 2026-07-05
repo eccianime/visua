@@ -1,12 +1,12 @@
 import { Spinner } from '@/components';
+import { useCurrentLanguage } from '@/hooks';
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Text, View } from 'react-native';
 
 export default function PleaseWait() {
   const [percentage, setPercentage] = useState(0);
-  const [t] = useTranslation();
+  const { t } = useCurrentLanguage();
 
   useEffect(() => {
     const timer = setInterval(() => {

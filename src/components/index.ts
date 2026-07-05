@@ -31,4 +31,8 @@ export * from './explore/design-details/image';
 export * from './works/gallery';
 export * from './works/works-select-type';
 
+export * from './account/features-list';
+export * from './account/upgrade-panel';
+export * from './account/user-card';
+
 export * from './modals/image-picker-modal';

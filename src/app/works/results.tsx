@@ -1,10 +1,9 @@
 import { BeforeAfterSlider, ScreenHeader } from '@/components';
 import colors from '@/config/colors';
-import { useFile } from '@/hooks';
+import { useCurrentLanguage, useFile } from '@/hooks';
 import { router } from 'expo-router';
 import { ArrowDownToLine, ExternalLink, Trash2 } from 'lucide-react-native';
 import { ArrowLeftIcon } from 'phosphor-react-native';
-import { useTranslation } from 'react-i18next';
 import { Dimensions, Pressable, Text, View } from 'react-native';
 
 const URL1 =
@@ -13,7 +12,7 @@ const URL2 =
   'https://myside.com.br/_next/image?url=https%3A%2F%2Frocket.myside.com.br%2Fapplication%2Fplugins%2Fmodule_imobles%2Fuploads%2Fenterprise%2F356188%2Fimages%2F_bcfa8a78748010171805528110986933.webp&w=3840&q=75';
 
 export default function Results() {
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
   const { saveAs, share } = useFile();
 
   const buttons = [

@@ -1,11 +1,14 @@
-import { Header, TabScreenWrapper } from '@/components';
-import { useTranslation } from 'react-i18next';
+import { FeaturesList, Header, TabScreenWrapper, UpgradePanel, UserCard } from '@/components';
+import { useCurrentLanguage } from '@/hooks';
 
 export default function Account() {
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
   return (
     <TabScreenWrapper>
       <Header title={t('account.title')} />
+      <UpgradePanel />
+      <UserCard />
+      <FeaturesList />
     </TabScreenWrapper>
   );
 }

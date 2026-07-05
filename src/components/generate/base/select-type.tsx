@@ -1,10 +1,10 @@
+import { useCurrentLanguage } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
-import { useTranslation } from 'react-i18next';
 import { Pressable, Text, View } from 'react-native';
 
 export function SelectType() {
   const { type, setType } = useGenerateStore();
-  const { t } = useTranslation();
+  const { t } = useCurrentLanguage();
 
   const isLeftSelected = type === 'interior';
   const isRightSelected = type === 'exterior';

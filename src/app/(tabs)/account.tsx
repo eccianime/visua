@@ -1,9 +1,11 @@
-import { Text, View } from 'react-native';
+import { Header, TabScreenWrapper } from '@/components';
+import { useTranslation } from 'react-i18next';
 
 export default function Account() {
+  const { t } = useTranslation();
   return (
-    <View>
-      <Text>Generate</Text>
-    </View>
+    <TabScreenWrapper>
+      <Header title={t('account.title')} />
+    </TabScreenWrapper>
   );
 }

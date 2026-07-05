@@ -1,9 +1,12 @@
-import { TabScreenWrapper, WorksGallery, WorksHeader, WorksSelectType } from '@/components';
+import { Header, TabScreenWrapper, WorksGallery, WorksSelectType } from '@/components';
+import { useCurrentLanguage } from '@/hooks';
 
 export default function Works() {
+  const { t } = useCurrentLanguage();
+
   return (
     <TabScreenWrapper isClear>
-      <WorksHeader />
+      <Header title={t('works.title')} />
       <WorksSelectType />
       <WorksGallery />
     </TabScreenWrapper>

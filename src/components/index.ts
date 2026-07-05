@@ -19,4 +19,12 @@ export * from './generate/select-type/room-list';
 
 export * from './generate/results/before-after-slider';
 
+export * from './explore/gallery';
+export * from './explore/header';
+export * from './explore/room-type-h-scroll';
+
+export * from './explore/design-details/blocks';
+export * from './explore/design-details/header';
+export * from './explore/design-details/image';
+
 export * from './modals/image-picker-modal';

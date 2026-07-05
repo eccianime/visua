@@ -42,13 +42,13 @@ export function CustomTab() {
 
   return (
     <View className="absolute bottom-0 w-full p-4">
-      <View className="mb-2 w-full flex-row items-center justify-between rounded-full bg-background py-1 shadow-md dark:bg-slate-900">
+      <View className="mb-2 w-full flex-row items-center justify-between rounded-full bg-white py-1 shadow-md dark:bg-slate-900">
         {buttons.map((button) => {
           const isActive = pathName === button.route;
           return (
             <Pressable
               key={button.text}
-              className={`w-1/4 items-center justify-center p-3`}
+              className={`w-1/4 items-center justify-center px-3 py-1`}
               onPress={() => router.push(button.route)}
             >
               <button.icon

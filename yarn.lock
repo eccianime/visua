@@ -2836,6 +2836,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@shopify/flash-list@npm:2.0.2":
+  version: 2.0.2
+  resolution: "@shopify/flash-list@npm:2.0.2"
+  dependencies:
+    tslib: "npm:2.8.1"
+  peerDependencies:
+    "@babel/runtime": "*"
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/c4e88348ce66e8f51c6213a42574a097d54cebf2125dc3fd8c077f3f7b83e25209c67bcb9a9102a3178c146cf5c23a978febd9a5ed5328ba1d7c663b5a8149d2
+  languageName: node
+  linkType: hard
+
 "@simple-libs/child-process-utils@npm:^1.0.0":
   version: 1.0.2
   resolution: "@simple-libs/child-process-utils@npm:1.0.2"
@@ -5687,6 +5700,15 @@ __metadata:
   version: 1.0.7
   resolution: "expo-server@npm:1.0.7"
   checksum: 10c0/1baf6dfb07e8b6be737a10c898c25e7ad80575e2e371413cd6530e81d471575f9454b1e3751ed14a9a7d8671d3da1e2917e27ac5faebb50671e87b923f0b7b27
+  languageName: node
+  linkType: hard
+
+"expo-sharing@npm:~14.0.8":
+  version: 14.0.8
+  resolution: "expo-sharing@npm:14.0.8"
+  peerDependencies:
+    expo: "*"
+  checksum: 10c0/64c6f42272b7e762988dbb92af6eabb71bd8229366cdc675cda78513fea39c46c9a46bb250ffaf5587b8361bd824a89820e46771cb5f97fc16bbfc87e3f00518
   languageName: node
   linkType: hard
 
@@ -10812,7 +10834,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.4.0":
+"tslib@npm:2.8.1, tslib@npm:^2.0.0, tslib@npm:^2.1.0, tslib@npm:^2.4.0":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
   checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
@@ -11216,6 +11238,7 @@ __metadata:
     "@commitlint/config-conventional": "npm:^20.5.3"
     "@expo-google-fonts/montserrat": "npm:^0.4.2"
     "@react-native-async-storage/async-storage": "npm:2.2.0"
+    "@shopify/flash-list": "npm:2.0.2"
     "@types/react": "npm:~19.1.10"
     babel-preset-expo: "npm:~54.0.10"
     eslint: "npm:^9.0.0"
@@ -11223,6 +11246,7 @@ __metadata:
     expo: "npm:~54.0.0"
     expo-constants: "npm:~18.0.13"
     expo-device: "npm:~8.0.10"
+    expo-file-system: "npm:~19.0.23"
     expo-font: "npm:~14.0.12"
     expo-image: "npm:~3.0.11"
     expo-image-picker: "npm:~17.0.11"
@@ -11230,6 +11254,7 @@ __metadata:
     expo-linking: "npm:~8.0.12"
     expo-localization: "npm:~17.0.9"
     expo-router: "npm:~6.0.24"
+    expo-sharing: "npm:~14.0.8"
     expo-splash-screen: "npm:~31.0.13"
     expo-status-bar: "npm:~3.0.9"
     expo-symbols: "npm:~1.0.8"

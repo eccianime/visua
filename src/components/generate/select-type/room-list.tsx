@@ -1,10 +1,10 @@
 import colors from '@/config/colors';
 import ROOM_TYPES, { RoomType } from '@/data/room-type';
+import { useCurrentLanguage } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
 import { router } from 'expo-router';
 import { MagnifyingGlassIcon, SmileySadIcon } from 'phosphor-react-native';
 import { useCallback, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { FlatList, Text, TextInput, View } from 'react-native';
 import Animated, { FadeInLeft } from 'react-native-reanimated';
 import { RoomListItem } from './room-list-item';
@@ -24,10 +24,9 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 
 export function RoomList() {
-  const { t, i18n } = useTranslation();
+  const { t, language } = useCurrentLanguage();
 
-  const currentLanguage = i18n.language as keyof typeof ROOM_TYPES;
-  const fullRoomList = ROOM_TYPES[currentLanguage];
+  const fullRoomList = ROOM_TYPES[language as keyof typeof ROOM_TYPES];
 
   const { roomType, setRoomType } = useGenerateStore();
   const [selectedTop, setSelectedTop] = useState<string | null>(null);

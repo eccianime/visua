@@ -16,10 +16,7 @@ export default function SelectType() {
 
   return (
     <View className="flex-1 bg-white dark:bg-dark-background">
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        contentContainerClassName="pt-safe  p-6 grow"
-      >
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerClassName="pt-safe p-6 grow">
         <ScreenHeader title={t('generate.roomTypeSelector.selectType')} onClose={router.back} />
         <RoomList />
       </ScrollView>

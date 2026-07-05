@@ -1,15 +1,14 @@
 import colors from '@/config/colors';
-import { useTheme } from '@/hooks';
+import { useCurrentLanguage, useTheme } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
 import { router } from 'expo-router';
 import { PaletteIcon } from 'phosphor-react-native';
 import { useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Pressable, Text, View } from 'react-native';
 
 export function ColorPaletteSelector() {
   const { isDark } = useTheme();
-  const { t, i18n } = useTranslation();
+  const { t, language } = useCurrentLanguage();
   const { colorPalette } = useGenerateStore();
 
   const handlePress = useCallback(() => {
@@ -29,7 +28,7 @@ export function ColorPaletteSelector() {
         )}
         <View>
           <Text className="  font-montserrat-semibold text-base text-black dark:text-white">
-            {colorPalette?.name[i18n.language as keyof typeof colorPalette.name] ||
+            {colorPalette?.name[language as keyof typeof colorPalette.name] ||
               t('generate.paletteSelector.colorPalette')}
           </Text>
           <Text className=" font-montserrat-regular text-sm text-gray-500 dark:text-gray-400">

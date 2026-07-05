@@ -1,16 +1,15 @@
 import colors from '@/config/colors';
 import ROOM_STYLES from '@/data/room-styles';
-import { useTheme } from '@/hooks';
+import { useCurrentLanguage, useTheme } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
 import { router } from 'expo-router';
 import { CrownIcon } from 'phosphor-react-native';
 import { useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Image, Pressable, Text, View } from 'react-native';
 
 export function RoomStyleSelector() {
   const { isDark } = useTheme();
-  const { t, i18n } = useTranslation();
+  const { t, language } = useCurrentLanguage();
   const { roomStyle } = useGenerateStore();
 
   const handlePress = useCallback(() => {
@@ -39,7 +38,7 @@ export function RoomStyleSelector() {
         <View className="h-[60px] justify-center">
           <Text className="text-center  font-montserrat-semibold text-base text-black dark:text-white">
             {roomStyle?.id
-              ? roomStyle.name[i18n.language as keyof typeof roomStyle.name]
+              ? roomStyle.name[language as keyof typeof roomStyle.name]
               : t('generate.roomStyleSelector.roomStyle')}
           </Text>
           <Text className="text-center font-montserrat-regular text-sm text-gray-500 dark:text-gray-400">

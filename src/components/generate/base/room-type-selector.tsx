@@ -1,23 +1,22 @@
 import colors from '@/config/colors';
 import ROOM_TYPES from '@/data/room-type';
-import { useTheme } from '@/hooks';
+import { useCurrentLanguage, useTheme } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
 import { router } from 'expo-router';
 import { ArmchairIcon } from 'phosphor-react-native';
 import { useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Pressable, Text, View } from 'react-native';
 
 export function RoomTypeSelector() {
   const { isDark } = useTheme();
-  const { t, i18n } = useTranslation();
+  const { t, language } = useCurrentLanguage();
   const { roomType } = useGenerateStore();
 
   const handlePress = useCallback(() => {
     router.push('/generate/select-type');
   }, []);
 
-  const Icon = ROOM_TYPES[i18n.language as keyof typeof ROOM_TYPES].find((item) =>
+  const Icon = ROOM_TYPES[language as keyof typeof ROOM_TYPES]?.find((item) =>
     item.items.includes(roomType)
   )?.icon;
 

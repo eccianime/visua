@@ -1,18 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ModalData, RoomStyleModal } from '@/components/modals/room-style-modal';
 import ROOM_STYLES, { RoomStyle } from '@/data/room-styles';
-import ROOM_TYPES from '@/data/room-type';
+import { useCurrentLanguage } from '@/hooks';
 import { useGenerateStore } from '@/store/generateStore';
 import { router } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { FlatList } from 'react-native';
 import Animated, { FadeInLeft } from 'react-native-reanimated';
 import { StyleListItem } from './style-list-item';
 
 export function StyleList() {
-  const { i18n } = useTranslation();
-  const currentLanguage = i18n.language as keyof typeof ROOM_TYPES;
+  const { language } = useCurrentLanguage();
   const { roomStyle, setRoomStyle } = useGenerateStore();
 
   const [modalData, setModalData] = useState<ModalData>({
@@ -41,8 +39,8 @@ export function StyleList() {
     setModalData({
       visible: true,
       id: item.id,
-      title: item.name[currentLanguage],
-      description: item.description[currentLanguage],
+      title: item.name[language as keyof typeof item.name],
+      description: item.description[language as keyof typeof item.description],
       imageUrl: item.imageUrl,
     });
   }, []);
@@ -53,7 +51,7 @@ export function StyleList() {
         <Animated.View entering={FadeInLeft.duration(300).delay(100 * index)} className={'w-1/3'}>
           <StyleListItem
             item={item}
-            name={item.name[currentLanguage]}
+            name={item.name[language as keyof typeof item.name]}
             isSelected={roomStyle?.id === item.id}
             onSelectItem={handleShowModal}
           />

@@ -1,9 +1,18 @@
-import { Text, View } from 'react-native';
+import {
+  ExploreGallery,
+  ExploreHeader,
+  RoomTypeHorizontalScroll,
+  SelectType,
+  TabScreenWrapper,
+} from '@/components';
 
 export default function Explore() {
   return (
-    <View>
-      <Text>Generate</Text>
-    </View>
+    <TabScreenWrapper isClear>
+      <ExploreHeader />
+      <SelectType />
+      <RoomTypeHorizontalScroll />
+      <ExploreGallery />
+    </TabScreenWrapper>
   );
 }

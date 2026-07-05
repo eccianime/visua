@@ -9,7 +9,15 @@ import {
   Montserrat_700Bold,
   useFonts,
 } from '@expo-google-fonts/montserrat';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Stack } from 'expo-router';
+import { cssInterop } from 'nativewind';
+
+cssInterop(LinearGradient, {
+  className: {
+    target: 'style',
+  },
+});
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({

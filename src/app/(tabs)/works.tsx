@@ -1,9 +1,11 @@
-import { Text, View } from 'react-native';
+import { TabScreenWrapper, WorksGallery, WorksHeader, WorksSelectType } from '@/components';
 
 export default function Works() {
   return (
-    <View>
-      <Text>Generate</Text>
-    </View>
+    <TabScreenWrapper isClear>
+      <WorksHeader />
+      <WorksSelectType />
+      <WorksGallery />
+    </TabScreenWrapper>
   );
 }

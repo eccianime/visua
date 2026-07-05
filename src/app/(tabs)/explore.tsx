@@ -1,8 +1,8 @@
 import {
   ExploreGallery,
   ExploreHeader,
+  ExploreSelectType,
   RoomTypeHorizontalScroll,
-  SelectType,
   TabScreenWrapper,
 } from '@/components';
 
@@ -10,7 +10,7 @@ export default function Explore() {
   return (
     <TabScreenWrapper isClear>
       <ExploreHeader />
-      <SelectType />
+      <ExploreSelectType />
       <RoomTypeHorizontalScroll />
       <ExploreGallery />
     </TabScreenWrapper>

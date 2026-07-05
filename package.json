@@ -61,7 +61,8 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "prepare": "npx husky",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "clean": "npx expo prebuild --clean && npx expo start -d -c"
   },
   "private": true,
   "lint-staged": {

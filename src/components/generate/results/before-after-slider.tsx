@@ -44,7 +44,7 @@ export function BeforeAfterSlider({
   ).current;
 
   return (
-    <View className="relative overflow-hidden" style={{ width, height }}>
+    <View className="relative overflow-hidden rounded-2xl" style={{ width, height }}>
       <Image
         source={{ uri: afterUri }}
         className="absolute left-0 top-0"
